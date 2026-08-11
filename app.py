@@ -1,4 +1,7 @@
 import streamlit as st
+
+st.image("python.png")
+
 st.title("Especializacion  Python for Analytics")
 st.sidebar.title("Parametros")
 st.write("Elaborado por: Carmela Contreras")
