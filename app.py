@@ -1,10 +1,12 @@
 import streamlit as st
 
-st.image("python.png")
 
 st.title("Especializacion  Python for Analytics")
 st.sidebar.title("Parametros")
 st.write("Elaborado por: Carmela Contreras")
+
+st.image("python.png",width=50)
+
 
 modulos=st.sidebar.selectbox("Seleccione un Modulo",["Modulo Listas","Modulo Arreglos","Modulo Funciones"])
 if modulos=="Modulo Listas":
