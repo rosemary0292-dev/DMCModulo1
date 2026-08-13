@@ -22,9 +22,11 @@ elif modulos=="Modulo Arreglos":
   st.write(cantidad_arreglo)
 
 else:
-  st.write("Bienvenido al modulo Funciones")
+  st.write("Bienvenido al módulo de Funciones")
+
   capital_inicial = st.number_input("Capital inicial", min_value=0.0, value=1000.0)
   tiempo_meses = st.number_input("Tiempo en meses", min_value=1, value=12)
   tasa_porcentaje = st.number_input("Tasa de interés anual (%)", min_value=0.0, value=0.05)
-   resultado_interes_simple = lf.interes_simple(capital_inicial, tiempo_meses,tasa_porcentaje )
+
+  resultado_interes_simple = lf.interes_simple(capital_inicial, tiempo_meses,tasa_porcentaje )
   st.write(resultado_interes_simple)
