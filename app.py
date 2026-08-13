@@ -1,6 +1,6 @@
 import streamlit as st
 import numpy as np
-import libreria_funciones lf
+import libreria_funciones as lf
 st.title("Especializacion  Python for Analytics")
 st.sidebar.title("Parametros")
 st.write("Elaborado por: Carmela Contreras")
