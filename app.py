@@ -22,7 +22,7 @@ elif modulos=="Modulo Arreglos":
   cantidad_elementos=st.slider("Seleccione la Cantidad de elementos de su arreglo",1,100)
   cantidad_arreglo=np.arange(cantidad_elementos)
   st.write(cantidad_arreglo)
-elif modulo=="Archivos"
+elif modulo=="Archivos" :
   archivo = st.sidebar.file_uploader("Seleccione su archivo")
   if archivo is not None:
     st.write("Su archivo ha sido Cargado")
