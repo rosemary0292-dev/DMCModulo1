@@ -38,7 +38,8 @@ if modulos == "Ejercicio1":
   
 elif modulos == "Ejercicio2":
   
-  st.write("Bienvenido al módulo de Arreglos")
+  st.write("Ejercicio 2 – Registro con NumPy, arrays y DataFrame")
+  st.markdown("El ejercicio busca registrar los productos en dataframe")
   if "productos" not in st.session_state:
     st.session_state.productos = np.empty((0, 5), dtype=object)
   Nombrepro=st.text_input("Ingrese el Nombre Producto")
@@ -54,8 +55,26 @@ elif modulos == "Ejercicio2":
   st.write("Productos registrados:")
   st.dataframe(df_productos)
 
+elif  modulos == "Ejercicio3":
+  st.write("Bienvenido al módulo de Funciones")
+  if "historico_funciones" not in st.session_state:
+    st.session_state.historico_funciones = []
 
-elif modulos == "Archivos":
+  funcion = st.selectbox("Seleccione una función",["Disponibilidad del sistema"])
+  if funcion == "Disponibilidad del sistema":
+    tiempo_total = st.number_input("Ingrese el tiempo total del sistema en horas")
+    tiempo_caida = st.number_input("Ingrese el tiempo de caída en horas")
+    ejecutar = st.button("Ejecutar función")
+    if ejecutar:
+      resultado = lf.calcular_disponibilidad_sistema(tiempo_total,tiempo_caida)
+      disponibilidad = resultado["disponibilidad_pct"]
+    st.write("Disponibilidad del sistema:",disponibilidad,"%")
+    st.session_state.historico_funciones.append({"Función": funcion,"Tiempo total": tiempo_total,"Tiempo caída": tiempo_caida, "Disponibilidad (%)": disponibilidad})
+    df_historico = pd.DataFrame(st.session_state.historico_funciones)
+    st.write("Histórico de resultados:")
+    st.dataframe(df_historico)
+    
+elif modulos == "Archivo":
   
   archivo = st.sidebar.file_uploader("Seleccione su archivo")
 
