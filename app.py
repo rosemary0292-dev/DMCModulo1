@@ -108,14 +108,14 @@ else:
           servidor.tiempo_caida_h = nuevo_tiempo_caida
           servidor.almacenamiento_usado_gb = nuevo_almacenamiento_usado
           
-  st.subheader("Eliminar servidor")
-  servidor_eliminar = st.selectbox("Seleccione servidor a eliminar", nombres)
-  eliminar = st.button("Eliminar")
-  if eliminar:
-    for servidor in st.session_state.servidores:
-      if servidor.nombre == servidor_eliminar:
-        st.session_state.servidores.remove(servidor)
-        break
+    st.subheader("Eliminar servidor")
+    servidor_eliminar = st.selectbox("Seleccione servidor a eliminar", nombres)
+    eliminar = st.button("Eliminar")
+    if eliminar:
+      for servidor in st.session_state.servidores:
+        if servidor.nombre == servidor_eliminar:
+          st.session_state.servidores.remove(servidor)
+          break
 
 
 
