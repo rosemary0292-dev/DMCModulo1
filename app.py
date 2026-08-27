@@ -27,7 +27,7 @@ if modulos == "Ejercicio1":
   if calcular:
     st.session_state.lista_flujo.append=list({"concepto": concepto, "tipo":tipo_movimiento, "valor": valor})
 
-  total_ingresos = sum(item["valor"] for item in lista_flujo if item["tipo"] == "Ingreso")
+  total_ingresos = sum(item["valor"] for item in st.session_state.lista_flujo if item["tipo"] == "Ingreso")
   st.write(st.session_state.lista_flujo)
   st.write("Total ingresos:", total_ingresos)
   
