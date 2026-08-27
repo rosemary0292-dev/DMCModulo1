@@ -74,7 +74,7 @@ elif  modulos == "Ejercicio3":
       st.write("Histórico de resultados:")
       st.dataframe(df_historico)
       
-elif modulos == "Ejercicio 4": 
+else:
   st.write("Bienvenido al módulo de Clases con CRUD")
   if "servidores" not in st.session_state:
     st.session_state.servidores = []
@@ -116,37 +116,11 @@ elif modulos == "Ejercicio 4":
       if servidor.nombre == servidor_eliminar:
         st.session_state.servidores.remove(servidor)
         break
-elif modulos == "Archivo":
-  
-  archivo = st.sidebar.file_uploader("Seleccione su archivo")
-
-  if archivo is not None:
-    st.write("Su archivo ha sido cargado")
-
-    if archivo.name.endswith(".csv"):
-      datos = pd.read_csv(archivo)
-      st.write(datos)
-    elif archivo.name.endswith(".xlsx"):
-      datos = pd.read_excel(archivo)
-      st.write(datos)
-
-  else:
-    st.write("Cargue su archivo")
 
 
 
 
 
-else:
-  
-  st.write("Bienvenido al módulo de Funciones")
-
-  capital_inicial = st.number_input("Capital inicial", min_value=0.0, value=1000.0)
-  tiempo_meses = st.number_input("Tiempo en meses", min_value=1, value=12)
-  tasa_porcentaje = st.number_input("Tasa de interés anual (%)", min_value=0.0, value=0.05)
-
-  resultado_interes_simple = lf.interes_simple(capital_inicial, tiempo_meses,tasa_porcentaje )
-  st.write(resultado_interes_simple)
 
   
 
