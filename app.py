@@ -24,7 +24,7 @@ if modulos == "Ejercicio1":
   tipo_movimiento=st.selectbox("Seleccione Tipo de movimiento",["Ingreso","Gasto"])
   valor = st.number_input("Ingrese el valor inicial")
   calcular=st.st.button("calcular")
-  if calcular==True :
+  if calcular:
     st.session_state.lista_flujo.append=list({"concepto": concepto, "tipo":tipo_movimiento, "valor": valor})
 
   total_ingresos = sum(item["valor"] for item in lista_flujo if item["tipo"] == "Ingreso")
