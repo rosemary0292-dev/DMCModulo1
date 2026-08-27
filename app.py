@@ -47,12 +47,12 @@ elif modulos == "Ejercicio2":
   total=precio*cantidad
   agregar=st.button("agregar")
   if agregar:
-    nuevo_producto = np.array([
-        [Nombrepro, Categoria, precio, cantidad, total]
-    ], dtype=object)
+    nuevo_producto = np.array([[Nombrepro, Categoria, precio, cantidad, total]], dtype=object)
+     st.session_state.productos = np.vstack([st.session_state.productos, nuevo_producto])
 
+  st.write("Productos registrados:")
+  st.dataframe(st.session_state.productos)
 
-  st.write(nuevo_producto)
 
 elif modulos == "Archivos":
   
