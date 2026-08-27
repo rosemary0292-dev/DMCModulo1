@@ -42,8 +42,8 @@ elif modulos == "Ejercicio2":
 
   Nombrepro=st.text_input("Ingrese el concepto")
   Categoria=st.selectbox("Seleccione la Categoria",["Ropa","Alemnto","Abarrote"])
-  precio = st.number_input("Ingrese el valor inicial")
-  cantidad = st.number_input("Ingrese el valor inicial")
+  precio = st.number_input("Ingrese el precio")
+  cantidad = st.number_input("Ingrese la cantidad")
   total=precio*cantidad
   agregar=st.button("agregar")
   if agregar:
