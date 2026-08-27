@@ -39,7 +39,8 @@ if modulos == "Ejercicio1":
 elif modulos == "Ejercicio2":
   
   st.write("Bienvenido al módulo de Arreglos")
-
+  if "productos" not in st.session_state:
+    st.session_state.productos = np.empty((0, 5), dtype=object)
   Nombrepro=st.text_input("Ingrese el concepto")
   Categoria=st.selectbox("Seleccione la Categoria",["Ropa","Alemnto","Abarrote"])
   precio = st.number_input("Ingrese el precio")
