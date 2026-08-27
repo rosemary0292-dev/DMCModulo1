@@ -1,27 +1,35 @@
 import streamlit as st
 import numpy as np
 import pandas as pd
-import libreria_funciones as lf
+import libreria_funciones_proyecto1.py as lf
+import librería_clases_proyecto1.py
 
-st.title("Especialización Python for Analytics")
-st.sidebar.title("Parámetros")
+st.title("PROYECTO 1 – APLICACIÓN EN STREAMLIT")
+st.subheader("Módulo 1 – Python Fundamentals")
+st.sidebar.title("Home")
 st.write("Elaborado por: Carmela Contreras")
 
-st.image("Python_logo.png", width = 300)
-st.sidebar.image("DMC.png",width = 100)
+st.image("python.png", width = 300)
+st.sidebar.image("dmc.png",width = 100)
 
 
-modulos = st.sidebar.selectbox ("Selecione un módulo", ["Módulo Listas", "Módulo Arreglos", "Módulo Funciones", "Archivos"])
+modulos = st.sidebar.selectbox ("Selecione un módulo", ["Ejercicio1", "Ejercicio2", "Ejercicio3", "Ejercicio4"])
 
-if modulos == "Módulo Listas":
+if modulos == "Ejercicio1":
   
-  st.write("Bienvenido al módulo Listas")
-  
-  valor_inicial = st.number_input("Ingrese el valor inicial")
-  valor_final = st.number_input("Ingrese el valor final")
-  
-  lista_numeros = list(range(int(valor_inicial), int(valor_final)))
-  st.write(lista_numeros)
+  st.write("Bienvenido al Ejercicio1: Flujo de caja con listas")
+  if "lista_flujo" not in st.session_state:
+    st.session_state.lista_flujo = []
+  concepto=st.text_input("Ingrese el concepto")
+  tipo_movimiento=st.selectbox("Seleccione Tipo de movimiento",["Ingreso","Gasto"])
+  valor = st.number_input("Ingrese el valor inicial")
+  calcular=st.st.button("calcular")
+  if calcular==True :
+    st.session_state.lista_flujo.append=list({"concepto": concepto, "tipo":tipo_movimiento, "valor": valor})
+
+  total_ingresos = sum(item["valor"] for item in lista_flujo if item["tipo"] == "Ingreso")
+  st.write(st.session_state.lista_flujo)
+  st.write("Total ingresos:", total_ingresos)
   
 elif modulos == "Módulo Arreglos":
   
