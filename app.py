@@ -106,7 +106,7 @@ elif modulos == "Ejercicio 4":
       for servidor in st.session_state.servidores:
         if servidor.nombre == servidor_actualizar:
           servidor.tiempo_caida_h = nuevo_tiempo_caida
-           servidor.almacenamiento_usado_gb = nuevo_almacenamiento_usado
+          servidor.almacenamiento_usado_gb = nuevo_almacenamiento_usado
           
   st.subheader("Eliminar servidor")
   servidor_eliminar = st.selectbox("Seleccione servidor a eliminar", nombres)
