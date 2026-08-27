@@ -68,11 +68,11 @@ elif  modulos == "Ejercicio3":
     if ejecutar:
       resultado = lf.calcular_disponibilidad_sistema(tiempo_total,tiempo_caida)
       disponibilidad = resultado["disponibilidad_pct"]
-    st.write("Disponibilidad del sistema:",disponibilidad,"%")
-    st.session_state.historico_funciones.append({"Función": funcion,"Tiempo total": tiempo_total,"Tiempo caída": tiempo_caida, "Disponibilidad (%)": disponibilidad})
-    df_historico = pd.DataFrame(st.session_state.historico_funciones)
-    st.write("Histórico de resultados:")
-    st.dataframe(df_historico)
+      st.write("Disponibilidad del sistema:",disponibilidad,"%")
+      st.session_state.historico_funciones.append({"Función": funcion,"Tiempo total": tiempo_total,"Tiempo caída": tiempo_caida, "Disponibilidad (%)": disponibilidad})
+      df_historico = pd.DataFrame(st.session_state.historico_funciones)
+      st.write("Histórico de resultados:")
+      st.dataframe(df_historico)
     
 elif modulos == "Archivo":
   
