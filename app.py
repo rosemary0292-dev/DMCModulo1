@@ -46,7 +46,7 @@ elif modulos == "Ejercicio2":
   cantidad = st.number_input("Ingrese el valor inicial")
   total=precio*cantidad
   agregar=st.button("agregar")
-   if agregar:
+  if agregar:
     nuevo_producto = np.array([
         [Nombrepro, Categoria, precio, cantidad, total]
     ], dtype=object)
