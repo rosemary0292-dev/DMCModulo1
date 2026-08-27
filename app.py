@@ -41,7 +41,7 @@ elif modulos == "Ejercicio2":
   st.write("Bienvenido al módulo de Arreglos")
   if "productos" not in st.session_state:
     st.session_state.productos = np.empty((0, 5), dtype=object)
-  Nombrepro=st.text_input("Ingrese el concepto")
+  Nombrepro=st.text_input("Ingrese el Nombre Producto")
   Categoria=st.selectbox("Seleccione la Categoria",["Ropa","Alemnto","Abarrote"])
   precio = st.number_input("Ingrese el precio")
   cantidad = st.number_input("Ingrese la cantidad")
@@ -50,9 +50,9 @@ elif modulos == "Ejercicio2":
   if agregar:
     nuevo_producto = np.array([[Nombrepro, Categoria, precio, cantidad, total]], dtype=object)
     st.session_state.productos = np.vstack([st.session_state.productos, nuevo_producto])
-
+  df_productos = pd.DataFrame(st.session_state.productos,columns=["Nombre", "Categoría", "Precio", "Cantidad", "Total"])
   st.write("Productos registrados:")
-  st.dataframe(st.session_state.productos)
+  st.dataframe(df_productos)
 
 
 elif modulos == "Archivos":
