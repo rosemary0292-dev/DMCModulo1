@@ -23,7 +23,7 @@ if modulos == "Ejercicio1":
   concepto=st.text_input("Ingrese el concepto")
   tipo_movimiento=st.selectbox("Seleccione Tipo de movimiento",["Ingreso","Gasto"])
   valor = st.number_input("Ingrese el valor inicial")
-  calcular=st.st.button("calcular")
+  calcular=st.button("calcular")
   if calcular:
     st.session_state.lista_flujo.append=list({"concepto": concepto, "tipo":tipo_movimiento, "valor": valor})
 
