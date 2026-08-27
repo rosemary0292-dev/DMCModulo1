@@ -73,7 +73,49 @@ elif  modulos == "Ejercicio3":
       df_historico = pd.DataFrame(st.session_state.historico_funciones)
       st.write("Histórico de resultados:")
       st.dataframe(df_historico)
+      
+elif modulos == "Ejercicio 4": 
+  st.write("Bienvenido al módulo de Clases con CRUD")
+  if "servidores" not in st.session_state:
+    st.session_state.servidores = []
     
+  st.subheader("Crear servidor")
+  nombre = st.text_input("Nombre del servidor")
+  tiempo_total = st.number_input("Tiempo total en horas")
+  tiempo_caida = st.number_input("Tiempo de caída en horas")
+  almacenamiento_total = st.number_input("Almacenamiento total GB")
+  almacenamiento_usado = st.number_input("Almacenamiento usado GB")
+  crear = st.button("Crear")
+  if crear:
+    servidor = lc.Servidor(nombre,tiempo_total,tiempo_caida,almacenamiento_total,almacenamiento_usado)
+    st.session_state.servidores.append(servidor)
+  st.subheader("Servidores registrados")
+  datos = []
+  for servidor in st.session_state.servidores:
+    datos.append(servidor.resumen())
+  df_servidores = pd.DataFrame(datos)
+  st.dataframe(df_servidores)
+  if len(st.session_state.servidores) > 0:
+    st.subheader("Actualizar servidor")
+    nombres = [servidor.nombre for servidor in st.session_state.servidores]
+    servidor_actualizar = st.selectbox( "Seleccione servidor a actualizar",nombres)
+    nuevo_tiempo_caida = st.number_input("Nuevo tiempo de caída")
+    nuevo_almacenamiento_usado = st.number_input("Nuevo almacenamiento usado",)
+    actualizar = st.button( "Actualizar")
+    if actualizar:
+      for servidor in st.session_state.servidores:
+        if servidor.nombre == servidor_actualizar:
+          servidor.tiempo_caida_h = nuevo_tiempo_caida
+           servidor.almacenamiento_usado_gb = nuevo_almacenamiento_usado
+          
+  st.subheader("Eliminar servidor")
+  servidor_eliminar = st.selectbox("Seleccione servidor a eliminar", nombres)
+  eliminar = st.button("Eliminar")
+  if eliminar:
+    for servidor in st.session_state.servidores:
+      if servidor.nombre == servidor_eliminar:
+        st.session_state.servidores.remove(servidor)
+        break
 elif modulos == "Archivo":
   
   archivo = st.sidebar.file_uploader("Seleccione su archivo")
