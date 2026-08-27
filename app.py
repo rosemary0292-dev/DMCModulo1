@@ -48,7 +48,7 @@ elif modulos == "Ejercicio2":
   agregar=st.button("agregar")
   if agregar:
     nuevo_producto = np.array([[Nombrepro, Categoria, precio, cantidad, total]], dtype=object)
-     st.session_state.productos = np.vstack([st.session_state.productos, nuevo_producto])
+    st.session_state.productos = np.vstack([st.session_state.productos, nuevo_producto])
 
   st.write("Productos registrados:")
   st.dataframe(st.session_state.productos)
