@@ -1,8 +1,8 @@
 import streamlit as st
 import numpy as np
 import pandas as pd
-import libreria_funciones_proyecto1.py as lf
-import librería_clases_proyecto1.py
+import libreria_funciones_proyecto1 as lf
+import librería_clases_proyecto1
 
 st.title("PROYECTO 1 – APLICACIÓN EN STREAMLIT")
 st.subheader("Módulo 1 – Python Fundamentals")
