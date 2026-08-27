@@ -7,8 +7,10 @@ import libreria_clases_proyecto1 as lc
 st.title("PROYECTO 1 – APLICACIÓN EN STREAMLIT")
 st.subheader("Módulo 1 – Python Fundamentals")
 st.sidebar.title("Home")
-st.write("Elaborado por: Carmela Contreras")
-
+st.write("Elaborado por: Rosemary Contreras Roque")
+st.write("2026")
+st.write("El proyecto busca mostrar las dieferentes herramientas aprendidas en el modulo 1 de python")
+st.write("Las tecnologías usadas son: listas, arreglos, funciones y clases")
 st.image("python.png", width = 300)
 st.sidebar.image("dmc.png",width = 100)
 
@@ -56,7 +58,8 @@ elif modulos == "Ejercicio2":
   st.dataframe(df_productos)
 
 elif  modulos == "Ejercicio3":
-  st.write("Bienvenido al módulo de Funciones")
+  st.write("Ejercicio 3 – Uso de funciones desde una librería externa")
+  st.markdown("El ejercicio utiliza la funcion disponibilidad del sistema")
   if "historico_funciones" not in st.session_state:
     st.session_state.historico_funciones = []
 
@@ -75,7 +78,8 @@ elif  modulos == "Ejercicio3":
       st.dataframe(df_historico)
       
 else:
-  st.write("Bienvenido al módulo de Clases con CRUD")
+  st.write("Ejercicio 4 – Uso de clases desde una librería externa con CRUD")
+  st.markdown("El ejercicio utiliza clases de una libreria externa")
   if "servidores" not in st.session_state:
     st.session_state.servidores = []
     
