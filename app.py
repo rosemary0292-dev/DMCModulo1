@@ -33,15 +33,26 @@ if modulos == "Ejercicio1":
   saldo=total_ingresos - total_gastos
   st.write(st.session_state.lista_flujo)
   st.write("Total ingresos:", total_ingresos)
-  st.write("Total ingresos:", total_gastos)
+  st.write("Total Gastos:", total_gastos)
   st.write("Saldo:", saldo)
-elif modulos == "Módulo Arreglos":
+  
+elif modulos == "Ejercicio2":
   
   st.write("Bienvenido al módulo de Arreglos")
 
-  cantidad_elementos = st.slider("Selecione la cantidad de elementos de su arreglo", 1,100)
-  cantidad_arreglo= np.arange(cantidad_elementos)
-  st.write(cantidad_arreglo)
+  Nombrepro=st.text_input("Ingrese el concepto")
+  Categoria=st.selectbox("Seleccione la Categoria",["Ropa","Alemnto","Abarrote"])
+  precio = st.number_input("Ingrese el valor inicial")
+  cantidad = st.number_input("Ingrese el valor inicial")
+  total=precio*cantidad
+  agregar=st.button("agregar")
+   if agregar:
+    nuevo_producto = np.array([
+        [Nombrepro, Categoria, precio, cantidad, total]
+    ], dtype=object)
+
+
+  st.write(nuevo_producto)
 
 elif modulos == "Archivos":
   
