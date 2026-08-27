@@ -18,6 +18,7 @@ modulos = st.sidebar.selectbox ("Selecione un módulo", ["Ejercicio1", "Ejercici
 if modulos == "Ejercicio1":
   
   st.write("Bienvenido al Ejercicio1: Flujo de caja con listas")
+  st.markdown("El ejercicio busca registrar los ingresos, gastos y saldo")
   if "lista_flujo" not in st.session_state:
     st.session_state.lista_flujo = []
   concepto=st.text_input("Ingrese el concepto")
@@ -29,10 +30,11 @@ if modulos == "Ejercicio1":
 
   total_ingresos = sum(item["valor"] for item in st.session_state.lista_flujo if item["tipo"] == "Ingreso")
   total_gastos = sum(item["valor"] for item in st.session_state.lista_flujo if item["tipo"] == "Gasto")
+  saldo=total_ingresos - total_gastos
   st.write(st.session_state.lista_flujo)
   st.write("Total ingresos:", total_ingresos)
   st.write("Total ingresos:", total_gastos)
-  
+  st.write("Saldo:", saldo)
 elif modulos == "Módulo Arreglos":
   
   st.write("Bienvenido al módulo de Arreglos")
